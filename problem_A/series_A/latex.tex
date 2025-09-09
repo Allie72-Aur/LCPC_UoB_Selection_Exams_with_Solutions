@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyvrb} % for the Verbatim environment
+
+% Define the pseudocode environment
+\fvset{fontsize=\small} % smaller font for the pseudocode
+\newenvironment{pseudocode}
+{\begin{Verbatim}[commandchars=\\\{\}]}
+{\end{Verbatim}}
+
+\title{Calculating Series A}
+\author{Allie A. Phenish}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Description}
+
+The problem is to calculate the value of the series \textbf{A}:
+$$
+A = \frac{X + 1}{2!} + \frac{X + 2}{4!} + \frac{X + 3}{8!} + \dots + \frac{X + 7}{128!}
+$$
+This can be expressed using summation notation as:
+$$
+A = \sum_{i=1}^{7} \frac{X + i}{(2^i)!}
+$$
+
+\section{Pseudocode}
+
+Here is a concise pseudocode solution that uses a separate function for the factorial calculation.
+
+\begin{pseudocode}
+procedure Calculate_A(X)
+    sum = 0
+    for i from 1 to 7
+        term = (X + i) / factorial(2^i)
+        sum = sum + term
+    return sum
+
+function factorial(n)
+    if n is 0 or 1
+        return 1
+    else
+        return n * factorial(n - 1)
+\end{pseudocode}
+
+We assumes 2\verb|^|j is an atomic operation, which is a reasonable assumption for high-level pseudocode.
+
+\end{document}

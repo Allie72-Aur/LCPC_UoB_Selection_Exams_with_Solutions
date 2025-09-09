@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyvrb} % for the Verbatim environment
+
+% Define the pseudocode environment
+\fvset{fontsize=\small} % smaller font for the pseudocode
+\newenvironment{pseudocode}
+{\begin{Verbatim}[commandchars=\\\{\}]}
+{\end{Verbatim}}
+
+\title{Calculating Product Z}
+\author{Allie A. Phenish}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Description}
+
+The problem is to calculate the value of the series \textbf{Z}, which is a product of four terms:
+$$Z = (3 \cdot X_1) \cdot (6 \cdot X_2) \cdot (12 \cdot X_3) \cdot (24 \cdot X_4)$$
+This can be expressed using product notation as:
+$$Z = \prod_{i=1}^{4} (3 \cdot 2^{i-1} \cdot X_i)$$
+
+\section{Pseudocode}
+
+A concise solution is presented in the pseudocode below. The solution uses a loop to iterate through each term of the series, calculating the coefficient for each $X_i$ and multiplying it by the corresponding value.
+
+\begin{pseudocode}
+procedure Calculate_Z(X_list)
+    product = 1
+    for j from 1 through 4
+        coefficient = 3 * pow(2, j-1)
+        term = coefficient * X_list[j]
+        product = product * term
+    return product
+\end{pseudocode}
+
+We assume \texttt{pow(x, y)} is an atomic operation, which is a reasonable assumption for high-level pseudocode.
+
+\end{document}
