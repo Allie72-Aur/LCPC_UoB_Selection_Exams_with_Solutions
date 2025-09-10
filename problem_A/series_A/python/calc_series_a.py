@@ -13,7 +13,8 @@ def factorial(n: int) -> int:
 
 def power(base: int, exp: int) -> int:
     product = 1
-    for j in range(1, exp):
+    # loop to iterate 'exp' number of times
+    for _ in range(exp):
         product = product * base
     return product
 

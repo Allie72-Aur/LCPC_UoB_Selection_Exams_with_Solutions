@@ -1,0 +1,1 @@
+python -m unittest test_calc_product_z.py
