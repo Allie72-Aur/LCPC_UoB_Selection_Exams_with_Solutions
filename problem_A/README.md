@@ -3,7 +3,8 @@
 problem_A
 ├── markdown.md
 ├── product_Z
-│  ├── c_code
+│  ├── C_Code
+│  │  └── product_z_calculator.c
 │  ├── LaTeX
 │  │  ├── latex.tex
 │  │  └── Product_Z.pdf
@@ -16,7 +17,8 @@ problem_A
 │     └── test_calc_product_z.sh
 ├── README.md
 ├── series_A
-│  ├── c_code
+│  ├── C_Code
+│  │  └── series_a_calculator.c
 │  ├── LaTeX
 │  │  ├── latex.tex
 │  │  └── SeriesA.pdf
@@ -30,6 +32,8 @@ problem_A
 │     ├── test_series_a.py
 │     └── test_series_a.sh
 ├── series_Y
+│  ├── C_Code
+│  │  └── series_y_calculator.c
 │  ├── LaTeX
 │  │  ├── latex.tex
 │  │  └── Series_Y.pdf
@@ -66,6 +70,13 @@ of the HTML document.
 Each sub-problem (product_Z, series_A, series_Y) has its own folder, which is
 further divided into dedicated sub-folders for code, documentation, etc.
 
+Each of these sub-directories has the following sub-sub-folders:
+.
+├── C_Code
+├── LaTeX
+├── markdown
+└── python
+
 ### Markdown (`markdown/`)
 
 This folder contains the Markdown source files (`.md`) that serve as the main
@@ -98,8 +109,7 @@ This is where all the Python-based source code is stored.
 * **Shell Scripts**: The `test_*.sh` scripts are simple utilities designed to run
   the corresponding unit tests with a single command.
 
-### C Code (`c_code/`)
+### C Code (`C_Code/`)
 
-This folder is a placeholder for future implementations of the solutions in
-the C programming language. Its presence indicates a plan for expanding the
-solutions to include multiple languages.
+This folder contains implementations of the solutions in
+the C programming language.
